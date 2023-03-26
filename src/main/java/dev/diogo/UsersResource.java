@@ -25,6 +25,11 @@ public class UsersResource {
         user.setFullName("Diogo Ribeiro Ramos");
         user.setUsername("diogo123");
         user.persist();
-        // return user;
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Usuarios> getOneUser(Integer id) {
+        return Usuarios.findById(id);
     }
 }
